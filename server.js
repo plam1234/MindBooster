@@ -37,7 +37,7 @@ app.use(passport.session());
 
 // Add routes, both API and view
 app.use(routes);
-app.use("/api/auth", auth);
+app.use("/api/signup", auth);
 app.get("/", (req, res) => res.send("Hello There!"));
 
 app.listen(PORT, () => console.log(`Backend Listening on port ${PORT}!`));
