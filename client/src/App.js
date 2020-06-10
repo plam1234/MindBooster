@@ -1,44 +1,52 @@
 import React from "react";
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import logo from "..//src/logo.png";
-import { Button, Form, Navbar, Nav, FormControl } from "react-bootstrap";
+import "./index.css";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+
+import Login from "./components/login.component";
+import SignUp from "./components/signup.component";
 
 function App() {
     return (
-        <div>
-            <Navbar className="nav-bar">
-                <Navbar.Brand href="#home">Home</Navbar.Brand>
-                <Nav className="mr-auto">
-                    <Nav.Link href="#signup">Sign Up</Nav.Link>
-                    <Nav.Link href="#features">Features</Nav.Link>
-                    <Nav.Link href="#pricing"> No account?</Nav.Link>
-                </Nav>
-            </Navbar>
+        <Router>
+            <div className="App">
+                <nav className="navbar navbar-expand-lg navbar-light fixed-top">
+                    <div className="container">
+                        <Link className="navbar-brand" to={"/sign-in"}>
+                            Mind Boost
+                        </Link>
+                        <div
+                            className="collapse navbar-collapse"
+                            id="navbarTogglerDemo02"
+                        >
+                            <ul className="navbar-nav ml-auto">
+                                <li className="nav-item">
+                                    <Link className="nav-link" to={"/sign-in"}>
+                                        Login
+                                    </Link>
+                                </li>
+                                <li className="nav-item">
+                                    <Link className="nav-link" to={"/sign-up"}>
+                                        Sign up
+                                    </Link>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
 
-            <div className="form-login">
-                <Form>
-                    <img src={logo} />
-                    <Form.Group controlId="formBasicEmail">
-                        <Form.Label>Email address</Form.Label>
-                        <Form.Control type="email" placeholder="Enter email" />
-                        <Form.Text className="text-muted">
-                            We'll never share your email with anyone else.
-                        </Form.Text>
-                    </Form.Group>
-
-                    <Form.Group controlId="formBasicPassword">
-                        <Form.Label>Password</Form.Label>
-                        <Form.Control type="password" placeholder="Password" />
-                    </Form.Group>
-                    <Form.Group controlId="formBasicCheckbox">
-                        <Form.Check type="checkbox" label="Check me out" />
-                    </Form.Group>
-                    <Button variant="primary" type="submit">
-                        Submit
-                    </Button>
-                </Form>
+                <div className="auth-wrapper">
+                    <div className="auth-inner">
+                        <Switch>
+                            <Route exact path="/" component={Login} />
+                            <Route path="/sign-in" component={Login} />
+                            <Route path="/sign-up" component={SignUp} />
+                        </Switch>
+                    </div>
+                </div>
             </div>
-        </div>
+        </Router>
     );
 }
 

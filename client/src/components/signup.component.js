@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-
+import logo from "../logo.png";
 export default class SignUp extends Component {
     render() {
         return (
             <form>
                 <h3>Sign Up</h3>
-
+                <img className="img" src={logo} />
                 <div className="form-group">
                     <label>First name</label>
                     <input
@@ -52,5 +52,3 @@ export default class SignUp extends Component {
         );
     }
 }
-
-export default SignUp;

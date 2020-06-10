@@ -1,33 +1,22 @@
-.nav-bar {
-    background: #a8c0ff; /* fallback for old browsers */
-    background: -webkit-linear-gradient(
-        to top,
-        #3f2b96,
-        #a8c0ff
-    ); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(
-        to top,
-        #3f2b96,
-        #a8c0ff
-    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
-.form-login {
-    background: #4e54c8; /* fallback for old browsers */
-    background: -webkit-linear-gradient(
-        to bottom,
-        #8f94fb,
-        #4e54c8
-    ); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(
-        to bottom,
-        #8f94fb,
-        #4e54c8
-    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+.App {
     text-align: center;
-    position: fixed;
+}
+
+.App-logo {
+    height: 40vmin;
+}
+
+.App-header {
+    background-color: #282c34;
+    min-height: 100vh;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    width: 100%;
-    height: 100%;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+
+.App-link {
+    color: #09d3ac;
 }
