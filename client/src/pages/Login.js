@@ -9,18 +9,8 @@ import "./login1.css";
 import { Form, Group, Lable, Button } from "react-bootstrap";
 
 function Login() {
-  const [books, setBooks] = useState([]);
+  const [users, setUsers] = useState([]);
   const [formObject, setFormObject] = useState({});
-
-  useEffect(() => {
-    loadBooks();
-  }, []);
-
-  function loadBooks() {
-    API.getBooks()
-      .then((res) => setBooks(res.data))
-      .catch((err) => console.log(err));
-  }
 
   function handleInputChange(event) {
     const { name, value } = event.target;
@@ -29,13 +19,13 @@ function Login() {
 
   function handleFormSubmit(event) {
     event.preventDefault();
-    if (formObject.title && formObject.author) {
-      API.saveBook({
-        title: formObject.title,
-        author: formObject.author,
-        synopsis: formObject.synopsis,
+    if (formObject.fullname && formObject.email && formObject.password) {
+      API.saveUser({
+        name: formObject.name,
+        email: formObject.email,
+        password: formObject.password,
       })
-        .then((res) => loadBooks())
+        .then((res) => setUsers())
         .catch((err) => console.log(err));
     }
   }
@@ -46,7 +36,11 @@ function Login() {
       <img className="img" src={logo} />
       <Form.Group controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>
-        <Form.Control type="email" placeholder="Enter email" />
+        <Form.Control
+          onChange={handleInputChange}
+          type="email"
+          placeholder="Enter email"
+        />
         <Form.Text className="text-muted">
           We'll never share your email with anyone else.
         </Form.Text>
@@ -54,10 +48,14 @@ function Login() {
 
       <Form.Group controlId="formBasicPassword">
         <Form.Label>Password</Form.Label>
-        <Form.Control type="password" placeholder="Password" />
+        <Form.Control
+          onChange={handleInputChange}
+          type="password"
+          placeholder="Password"
+        />
       </Form.Group>
       <Form.Group controlId="formBasicCheckbox"> </Form.Group>
-      <Button variant="primary" type="submit">
+      <Button onClick={handleFormSubmit} variant="primary" type="submit">
         Submit
       </Button>
       <hr />
