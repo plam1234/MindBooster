@@ -64,26 +64,28 @@ function Signup() {
                 <Form.Text className="text-muted"></Form.Text>
             </Form.Group>
 
-            <Form.Group controlId="formBasicPassword">
-                <Form.Label>Password</Form.Label>
-                <Form.Control type="password" placeholder="Password" />
-            </Form.Group>
-            <Form.Group controlId="formBasicPassword">
-                <Form.Label>Confirm password</Form.Label>
-                <Form.Control type="password" placeholder="Conferm password" />
-            </Form.Group>
-            <Form.Group controlId="formBasicCheckbox"> </Form.Group>
-            <Button variant="primary" type="submit">
-                Submit
-            </Button>
-            <hr />
-            <Link to="/login">
-                <Button variant="primary" type="no account">
-                    Have an account login
-                </Button>
-            </Link>
-        </Form>
-    );
+
+      <Form.Group controlId="formBasicPassword">
+        <Form.Label>Password</Form.Label>
+        <Form.Control type="password" placeholder="Password" />
+      </Form.Group>
+      <Form.Group controlId="formBasicPassword">
+        <Form.Label>Confirm password</Form.Label>
+        <Form.Control type="password" placeholder="Confirm password" />
+      </Form.Group>
+      <Form.Group controlId="formBasicCheckbox"> </Form.Group>
+      <Button variant="primary" type="submit">
+        Submit
+      </Button>
+      <hr />
+      <Link to="/login">
+        <Button variant="primary" type="no account">
+          Have an account login
+        </Button>
+      </Link>
+    </Form>
+  );
+
 }
 
 export default Signup;
