@@ -8,7 +8,6 @@ import { List, ListItem } from "../components/List";
 import { Input, TextArea, FormBtn } from "../components/Form";
 import logo from "../logo.png";
 import "./login1.css";
-
 import { Form, Group, Lable, Button } from "react-bootstrap";
 
 function Signup() {
@@ -51,7 +50,7 @@ function Signup() {
 
     return (
         <Form className="signup">
-            <h1>Sign Up for Hello </h1>
+            <h1>Sign Up for</h1>
             <img className="img" src={logo} />
             <Form.Group controlId="formBasicEmail">
                 <Form.Label>Full name </Form.Label>
