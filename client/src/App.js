@@ -9,17 +9,17 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // Refer to the Basic Example documentation if you need to.
 // (https://reacttraining.com/react-router/web/example/basic)
 function App() {
-  return (
-    <Router>
-      <Nav />
-      <Switch>
-        <Route exact path="/" component={Books} />
-        <Route exact path="/books" component={Books} />
-        <Route exact path="/books/:id" component={Detail} />
-        <Route path="*" component={NoMatch} />
-      </Switch>
-    </Router>
-  );
+    return (
+        <Router>
+            <Nav />
+            <Switch>
+                <Route exact path="/" component={Books} />
+                <Route exact path="/books" component={Books} />
+                <Route exact path="/books/:id" component={Detail} />
+                <Route path="*" component={NoMatch} />
+            </Switch>
+        </Router>
+    );
 }
 
 export default App;
