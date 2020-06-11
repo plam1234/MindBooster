@@ -5,7 +5,7 @@ const db = require("../models");
 
 mongoose.connect(
   process.env.MONGODB_URI ||
-  "mongodb://localhost/reactquestionlist"
+  "mongodb://localhost/reactreadinglist"
 );
 
 const questionSeed = [
@@ -105,9 +105,9 @@ const questionSeed = [
     explanation:"Explanation: Algorithms help us to understand scalability. Performance often draws the line between what is feasible and what is impossible."
 }];
 
-db.questions
+db.Book
   .remove({})
-  .then(() => db.questions.collection.insertMany(questionSeed))
+  .then(() => db.Book.collection.insertMany(bookSeed))
   .then(data => {
     console.log(data.result.n + " records inserted!");
     process.exit(0);

@@ -1,53 +1,27 @@
 import React from "react";
-import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import "./App.css";
-import "./index.css";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+import NoMatch from "./pages/NoMatch";
+import Nav from "./components/Nav";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import Login from "./components/login.component";
-import SignUp from "./components/signup.component";
+// The app will not render correctly until you setup a Route component.
+// Refer to the Basic Example documentation if you need to.
+// (https://reacttraining.com/react-router/web/example/basic)
 
+// Create Login route, Signup Route, Quiz Route(dash/home)
 function App() {
-    return (
-        <Router>
-            <div className="App">
-                <nav className="navbar navbar-expand-lg navbar-light fixed-top">
-                    <div className="container">
-                        <Link className="navbar-brand" to={"/sign-in"}>
-                            Mind Boost
-                        </Link>
-                        <div
-                            className="collapse navbar-collapse"
-                            id="navbarTogglerDemo02"
-                        >
-                            <ul className="navbar-nav ml-auto">
-                                <li className="nav-item">
-                                    <Link className="nav-link" to={"/sign-in"}>
-                                        Login
-                                    </Link>
-                                </li>
-                                <li className="nav-item">
-                                    <Link className="nav-link" to={"/sign-up"}>
-                                        Sign up
-                                    </Link>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
-
-                <div className="auth-wrapper">
-                    <div className="auth-inner">
-                        <Switch>
-                            <Route exact path="/" component={Login} />
-                            <Route path="/sign-in" component={Login} />
-                            <Route path="/sign-up" component={SignUp} />
-                        </Switch>
-                    </div>
-                </div>
-            </div>
-        </Router>
-    );
+  return (
+    <Router>
+      <Nav />
+      <Switch>
+        <Route exact path="/" component={Login} />
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/signup" component={Signup} />
+        <Route path="*" component={NoMatch} />
+      </Switch>
+    </Router>
+  );
 }
 
 export default App;
