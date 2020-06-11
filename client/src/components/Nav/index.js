@@ -1,27 +1,27 @@
 import React from "react";
+import { Link, Router } from "react-router-dom";
+import { Nav, Switch } from "react-bootstrap";
+import Books from "../../pages/Books";
+import "./index.css";
 
-function Nav() {
+function Navbar() {
     return (
         <Nav
+            className="navbar"
             activeKey="/home"
             onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
         >
             <Nav.Item>
-                <Nav.Link href="/home">Active</Nav.Link>
+                <Nav.Link href="/home">Home</Nav.Link>
             </Nav.Item>
             <Nav.Item>
-                <Nav.Link eventKey="link-1">Link</Nav.Link>
+                <Nav.Link eventKey="Start">Start</Nav.Link>
             </Nav.Item>
             <Nav.Item>
                 <Nav.Link eventKey="link-2">Link</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-                <Nav.Link eventKey="disabled" disabled>
-                    Disabled
-                </Nav.Link>
             </Nav.Item>
         </Nav>
     );
 }
 
-export default Nav;
+export default Navbar;
