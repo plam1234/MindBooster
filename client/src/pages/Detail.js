@@ -4,7 +4,7 @@ import { Col, Row, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
 
-function Detail() {
+function Home() {
   const [book, setBook] = useState({});
 
   // Add code to get the book with an _id equal to the id in the route param
@@ -40,11 +40,11 @@ function Detail() {
       </Row>
       <Row>
         <Col size="md-2">
-          <Link to="/">← Back to Authors</Link>
+          <Link to="/signup">← Back to Authors</Link>
         </Col>
       </Row>
     </Container>
   );
 }
 
-export default Detail;
+export default Home;
