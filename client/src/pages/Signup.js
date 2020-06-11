@@ -11,7 +11,7 @@ import "./login1.css";
 
 import { Form, Group, Lable, Button } from "react-bootstrap";
 
-function Login() {
+function Signup() {
     const [books, setBooks] = useState([]);
     const [formObject, setFormObject] = useState({});
 
@@ -55,7 +55,7 @@ function Login() {
             <img className="img" src={logo} />
             <Form.Group controlId="formBasicEmail">
                 <Form.Label>Full name </Form.Label>
-                <Form.Control type="email" placeholder="Full name" />
+                <Form.Control type="name" placeholder="Full name" />
                 <Form.Text className="text-muted"></Form.Text>
             </Form.Group>
 
@@ -70,7 +70,7 @@ function Login() {
                 <Form.Control type="password" placeholder="Password" />
             </Form.Group>
             <Form.Group controlId="formBasicPassword">
-                <Form.Label>Conferm password</Form.Label>
+                <Form.Label>Confirm password</Form.Label>
                 <Form.Control type="password" placeholder="Conferm password" />
             </Form.Group>
             <Form.Group controlId="formBasicCheckbox"> </Form.Group>
@@ -87,4 +87,4 @@ function Login() {
     );
 }
 
-export default Login;
+export default Signup;
