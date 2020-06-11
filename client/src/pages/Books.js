@@ -7,7 +7,7 @@ import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Input, TextArea, FormBtn } from "../components/Form";
 
-function Signup() {
+function Books() {
   const [books, setBooks] = useState([]);
   const [formObject, setFormObject] = useState({});
 
@@ -102,4 +102,4 @@ function Signup() {
   );
 }
 
-export default Signup;
+export default Books;
