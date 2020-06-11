@@ -1,3 +1,3 @@
 module.exports = {
-  Quiz: require("./Quiz"),
+  Book: require("./book")
 };
