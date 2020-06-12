@@ -8,7 +8,7 @@ function Navbar() {
     return (
         <Nav className="bar" activeKey="/home">
             <Nav.Item>
-                <Nav.Link href="/">Home </Nav.Link>
+                <Link to="/login">Sign Out </Link>
             </Nav.Item>
             <Nav.Item>
                 <Link to="/homepage"> Homepage </Link>

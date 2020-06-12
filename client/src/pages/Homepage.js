@@ -2,8 +2,9 @@ import React, { Component } from "react";
 import API from "../utils/API";
 import { Input, TextArea, FormBtn } from "../components/Form";
 import quiz1 from "../quiz1.png";
+import { Link } from "react-router-dom"
 import logo from "../logo.png";
-
+import Quiz from "./Quiz"
 import "./login1.css";
 import { Card, Img, Col, Title, Button } from "react-bootstrap";
 
@@ -21,7 +22,7 @@ class Home extends Component {
                             Today we will pass a small test, please click on the
                             button in order to start our test
                         </Card.Text>
-                        <Button variant="primary">Let's star quiz</Button>
+                        <Link to="/quiz"><Button variant="primary">Let's start quiz</Button> </Link>
                     </Card.Body>
                 </Card>
             </div>
