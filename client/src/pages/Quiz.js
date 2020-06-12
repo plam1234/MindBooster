@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import questionAPI from '../question/index'; 
 import QuestionBox from '../components/QuestionBox'; 
 import Result from '../components/ResultBox'; 
+import "../style.css"; 
 
 class Quiz extends Component { 
 constructor() { 
@@ -49,7 +50,7 @@ componentDidMount() {
 render() { 
 	return (<div className="container"> 
 	<div className="title"> 
-		QuizOn 
+		Mind Booster 
 	</div> 
 
 	{this.state.questionBank.length > 0 && 

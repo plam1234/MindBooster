@@ -1,6 +1,6 @@
 
 import React, {useState} from "react"; 
-
+import "../style.css";
   
 // Function to question inside our app 
 const QuestionBox = ({ question, options, selected}) => { 
@@ -21,5 +21,6 @@ const QuestionBox = ({ question, options, selected}) => {
     </div> 
   ) 
 }; 
+
   
 export default QuestionBox; 
