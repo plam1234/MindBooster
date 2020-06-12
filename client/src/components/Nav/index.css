@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600,700,800");
 
-.navbar {
+.bar {
     background: #8e9eab; /* fallback for old browsers */
     background: -webkit-linear-gradient(
         to bottom,
