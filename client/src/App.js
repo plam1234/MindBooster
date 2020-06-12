@@ -1,6 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
+import { Provider } from "react-redux";
+import store from "./store";
+
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import NoMatch from "./pages/NoMatch";
@@ -14,16 +17,18 @@ import home from "./pages/Homepage";
 // Create Login route, Signup Route, Quiz Route(dash/home)
 function App() {
   return (
-    <Router>
-      <Nav />
-      <Switch>
-        <Route exact path="/" component={Login} />
-        <Route exact path="/login" component={Login} />
-        <Route exact path="/signup" component={Signup} />
-        <Route exact path="/homepage" component={home} />
-        <Route path="*" component={NoMatch} />
-      </Switch>
-    </Router>
+    <Provider store={store}>
+      <Router>
+        <Nav />
+        <Switch>
+          <Route exact path="/" component={Login} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/signup" component={Signup} />
+          <Route exact path="/homepage" component={home} />
+          <Route path="*" component={NoMatch} />
+        </Switch>
+      </Router>
+    </Provider>
   );
 }
 
