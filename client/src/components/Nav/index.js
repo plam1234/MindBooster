@@ -6,11 +6,7 @@ import "../../../src/App";
 
 function Navbar() {
     return (
-        <Nav
-            className="bar"
-            activeKey="/home"
-            onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
-        >
+        <Nav className="bar" activeKey="/home">
             <Nav.Item>
                 <Nav.Link href="/">Home </Nav.Link>
             </Nav.Item>
