@@ -20,7 +20,7 @@ class Home extends Component {
               Today we will pass a small test, please click on the button in
               order to start our test
             </Card.Text>
-            <Link to="/quiz">
+            <Link to="/Quiz">
               <Button variant="primary">Let's star quiz</Button>{" "}
             </Link>
           </Card.Body>
