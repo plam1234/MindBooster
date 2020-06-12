@@ -1,3 +1,4 @@
+
 import React from 'react'; 
 import "../style.css";
   
@@ -9,3 +10,4 @@ const Result = ({score, playAgain}) => (
 ) 
   
 export default Result;
+

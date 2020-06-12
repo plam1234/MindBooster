@@ -1,14 +1,15 @@
 import React, { Component } from "react";
-import API from "../utils/API";
-import { Input, TextArea, FormBtn } from "../components/Form";
 import quiz1 from "../quiz1.png";
+
 import { Link } from "react-router-dom"
 import logo from "../logo.png";
 import Quiz from "./Quiz"
+
 import "./login1.css";
-import { Card, Img, Col, Title, Button } from "react-bootstrap";
+import { Card, Button } from "react-bootstrap";
 
 class Home extends Component {
+
     render() {
         return (
             <div className="tainer">
@@ -28,5 +29,6 @@ class Home extends Component {
             </div>
         );
     }
+
 }
 export default Home;
