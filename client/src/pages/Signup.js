@@ -1,7 +1,6 @@
 import React, { useState, setEffect } from "react";
 import API from "../utils/API";
 import { Link } from "react-router-dom";
-import { Input, TextArea, FormBtn } from "../components/Form";
 import logo from "../logo.png";
 import "./login1.css";
 import { Form, Group, Label, Button } from "react-bootstrap";
