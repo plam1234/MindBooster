@@ -44,3 +44,27 @@ h1 {
     color: white;
     text-align: center;
 }
+.tainer {
+    background: #70e1f5; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+        to top,
+        #ffd194,
+        #70e1f5
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+        to top,
+        #ffd194,
+        #70e1f5
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: rgb(3, 3, 3);
+    text-align: center;
+}
+.imagge {
+    width: 35vh;
+}
