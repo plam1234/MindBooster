@@ -14,13 +14,14 @@ class Navbar extends Component {
   render() {
     const { user } = this.props.auth;
     return (
-      <Nav className="bar" activeKey="/home">
-        <Nav.Item>
-          <Nav.Link href="/">Signout </Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Link to="/homepage"> Homepage </Link>
-        </Nav.Item>
+        <Nav className="bar" activeKey="/home">
+            <Nav.Item>
+                <Link to="/login">Sign Out </Link>
+            </Nav.Item>
+            <Nav.Item>
+                <Link to="/homepage"> Homepage </Link>
+            </Nav.Item>
+
 
         {/* <Nav.Item>
                 <Nav.Link eventKey="../../pages/homepage">Homepage</Nav.Link>
