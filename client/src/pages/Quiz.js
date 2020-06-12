@@ -1,8 +1,8 @@
 import React, {Component} from "react"; 
 import ReactDOM from "react-dom"; 
-import questionAPI from '/questions'; 
-import QuestionBox from './components/QuestionBox'; 
-import Result from './components/ResultBox'; 
+import questionAPI from '../question/index'; 
+import QuestionBox from '../components/QuestionBox'; 
+import Result from '../components/ResultBox'; 
 
 class Quiz extends Component { 
 constructor() { 
