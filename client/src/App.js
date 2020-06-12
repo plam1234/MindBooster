@@ -2,7 +2,8 @@ import React from "react";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import NoMatch from "./pages/NoMatch";
-import Nav from "./components/Nav";
+import Nav from "./components/Nav/index";
+import Homepage from "./pages/Homepage";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 // The app will not render correctly until you setup a Route component.
@@ -11,17 +12,18 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 // Create Login route, Signup Route, Quiz Route(dash/home)
 function App() {
-  return (
-    <Router>
-      <Nav />
-      <Switch>
-        <Route exact path="/" component={Login} />
-        <Route exact path="/login" component={Login} />
-        <Route exact path="/signup" component={Signup} />
-        <Route path="*" component={NoMatch} />
-      </Switch>
-    </Router>
-  );
+    return (
+        <Router>
+            <Nav />
+            <Switch>
+                <Route exact path="/" component={Login} />
+                <Route exact path="/login" component={Login} />
+                <Route exact path="/signup" component={Signup} />
+                <Route exact path="/homepage" component={Homepage} />
+                <Route path="*" component={NoMatch} />
+            </Switch>
+        </Router>
+    );
 }
 
 export default App;
