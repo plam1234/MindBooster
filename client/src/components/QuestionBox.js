@@ -1,14 +1,14 @@
 
 import React, {useState} from "react"; 
-
+import "../style.css";
   
 // Function to question inside our app 
 const QuestionBox = ({ question, options, selected}) => { 
-  const [answer, setAnswer] = useState(options); 
+  const [answers, setAnswer] = useState(options); 
   return ( 
     <div className="questionBox"> 
         <div className="question">{question}</div> 
-        {answer.map((text, index) => ( 
+        {answers && answers.map((text, index) => ( 
           <button 
               key={index} 
               className="answerBtn"
@@ -21,5 +21,6 @@ const QuestionBox = ({ question, options, selected}) => {
     </div> 
   ) 
 }; 
+
   
 export default QuestionBox; 
