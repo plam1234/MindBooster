@@ -18,7 +18,7 @@ class Login extends Component {
     };
   }
   componentDidMount() {
-    // If logged in and user navigates to Login page, should redirect them to dashboard
+    // If logged in and user navigates to Login page, should redirect them to homepage
     if (this.props.auth.isAuthenticated) {
       this.props.history.push("/homepage");
     }
@@ -44,7 +44,7 @@ class Login extends Component {
 
   handleFormSubmit = (e) => {
     e.preventDefault();
-    console.log("i am submitting stuffs");
+    //console.log("i am submitting stuffs");
     const userData = {
       email: this.state.email,
       password: this.state.password,
