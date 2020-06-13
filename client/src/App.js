@@ -11,9 +11,9 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav/index";
-
-import Homepage from "./pages/Homepage";
-import Quiz from "./pages/Quiz";
+import home from "./pages/Homepage";
+import PrivateRoute from "./components/private-route/PrivateRoute";
+// import Quiz from "./pages/Quiz";
 
 // The app will not render correctly until you setup a Route component.
 // Refer to the Basic Example documentation if you need to.
@@ -41,17 +41,22 @@ if (localStorage.jwtToken) {
 // Create Login route, Signup Route, Quiz Route(dash/home)
 function App() {
   return (
-    <Router>
-      <Nav />
-      <Switch>
-        <Route exact path="/" component={Login} />
-        <Route exact path="/login" component={Login} />
-        <Route exact path="/signup" component={Signup} />
-        <Route exact path="/quiz" component={Quiz} />
-        <Route exact path="/homepage" component={Homepage} />
-        <Route path="*" component={NoMatch} />
-      </Switch>
-    </Router>
+    <Provider store={store}>
+      <Router>
+        <Nav />
+        <Switch>
+          <Route exact path="/" component={Login} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/signup" component={Signup} />
+          {/* <Route exact path="/quiz" component={Quiz} /> */}
+          <Route exact path="/homepage" component={home} />
+          <Switch>
+            <PrivateRoute exact path="/homepage" component={home} />
+          </Switch>
+          <Route path="*" component={NoMatch} />
+        </Switch>
+      </Router>
+    </Provider>
   );
 }
 
