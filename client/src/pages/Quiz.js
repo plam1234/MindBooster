@@ -80,6 +80,6 @@ class Quiz extends Component {
     }
 }
 
-ReactDOM.render(<Quiz />, document.getElementById("root"));
+// ReactDOM.render(<Quiz />, document.getElementById("root"));
 
 export default Quiz;
