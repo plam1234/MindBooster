@@ -14,6 +14,8 @@ function UnauthenticatedApp() {
         <Route exact path="/" component={Login} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/signup" component={Signup} />
+        <Route exact path="/quiz" component={Login} />
+
         <Switch></Switch>
         <Route path="*" component={NoMatch} />
       </Switch>
