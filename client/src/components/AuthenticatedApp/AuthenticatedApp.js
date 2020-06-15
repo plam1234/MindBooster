@@ -12,6 +12,7 @@ function AuthenticatedApp() {
       <Nav />
       <Switch>
         <Route exact path="/" component={Home} />
+        <Route exact path="/login" component={Home} />
         <Route exact path="/quiz" component={Quiz} />
 
         <Switch></Switch>
