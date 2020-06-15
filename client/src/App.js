@@ -1,19 +1,14 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import React, { Component } from "react";
 import jwt_decode from "jwt-decode";
 import setAuthToken from "./utils/setAuthToken";
 import { setCurrentUser, logoutUser } from "./actions/authActions";
 
-import { Provider } from "react-redux";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
 import store from "./store";
 
-import Login from "./pages/Login";
-import Signup from "./pages/Signup";
-import NoMatch from "./pages/NoMatch";
-import Nav from "./components/Nav/index";
-import home from "./pages/Homepage";
-import PrivateRoute from "./components/private-route/PrivateRoute";
-import Quiz from "./pages/Quiz";
+import AuthenticatedApp from "./components/AuthenticatedApp/AuthenticatedApp";
+import UnathenticatedApp from "./components/UnAuthenticatedApp/UnAuthenticatedApp";
 
 // The app will not render correctly until you setup a Route component.
 // Refer to the Basic Example documentation if you need to.
@@ -39,25 +34,26 @@ if (localStorage.jwtToken) {
 }
 
 // Create Login route, Signup Route, Quiz Route(dash/home)
-function App() {
-  return (
-    <Provider store={store}>
-      <Router>
-        <Nav />
-        <Switch>
-          <Route exact path="/" component={Login} />
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/signup" component={Signup} />
-          <Route exact path="/quiz" component={Quiz} />
-          <Route exact path="/homepage" component={home} />
-          <Switch>
-            <PrivateRoute exact path="/homepage" component={home} />
-          </Switch>
-          <Route path="*" component={NoMatch} />
-        </Switch>
-      </Router>
-    </Provider>
-  );
+class App extends Component {
+  onLogoutClick = (e) => {
+    e.preventDefault();
+    this.props.logoutUser();
+  };
+
+  render() {
+    const { user } = this.props.auth;
+
+    return user.id ? <AuthenticatedApp /> : <UnathenticatedApp />;
+  }
 }
 
-export default App;
+App.propTypes = {
+  logoutUser: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired,
+};
+
+const mapStateToProps = (state) => ({
+  auth: state.auth,
+});
+
+export default connect(mapStateToProps, { logoutUser })(App);
