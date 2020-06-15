@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import NoMatch from "../../pages/NoMatch";
 import Nav from "../Nav";
-import home from "../../pages/Homepage";
+import Home from "../../pages/Homepage";
 import Quiz from "../../pages/Quiz";
 
 function AuthenticatedApp() {
@@ -11,8 +11,9 @@ function AuthenticatedApp() {
     <Router>
       <Nav />
       <Switch>
+        <Route exact path="/" component={Home} />
         <Route exact path="/quiz" component={Quiz} />
-        <Route exact path="/" component={home} />
+
         <Switch></Switch>
         <Route path="*" component={NoMatch} />
       </Switch>
