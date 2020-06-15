@@ -38,6 +38,7 @@ class App extends Component {
   onLogoutClick = (e) => {
     e.preventDefault();
     this.props.logoutUser();
+    console.log("logging out");
   };
 
   render() {
