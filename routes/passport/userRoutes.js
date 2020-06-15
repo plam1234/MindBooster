@@ -9,12 +9,13 @@ const validateRegisterInput = require("../api/validation/register");
 const validateLoginInput = require("../api/validation/login");
 
 // Load User model
-const User = require("../../models/User");
-
+const db = require("../../models");
+const User = db.User;
 // @route POST api/users/register
 // @desc Register user
 // @access Public
 router.post("/register", (req, res) => {
+  console.log(req.body, "register body");
   // Form validation
   const { errors, isValid } = validateRegisterInput(req.body);
   // Check validation
@@ -49,6 +50,7 @@ router.post("/register", (req, res) => {
 // @desc Login user and return JWT token
 // @access Public
 router.post("/login", (req, res) => {
+  console.log(req.body, "logging sumting");
   // Form validation
   const { errors, isValid } = validateLoginInput(req.body);
   // Check validation

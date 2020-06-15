@@ -8,8 +8,8 @@ const passport = require("passport");
 const users = require("./routes/passport/userRoutes");
 
 const app = express();
-const routes = require("./routes");
-const PORT = process.env.PORT || 5000;
+
+const PORT = process.env.PORT || 3001;
 const MONGO_URI = "mongodb://127.0.0.1:27017/users";
 
 // DB Config
@@ -42,7 +42,6 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 // Add routes, both API and view
-app.use(routes);
 
 // Start the API server
 app.listen(PORT, function () {

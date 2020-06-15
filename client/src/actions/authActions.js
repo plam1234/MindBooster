@@ -5,6 +5,7 @@ import jwt_decode from "jwt-decode";
 import { GET_ERRORS, SET_CURRENT_USER, USER_LOADING } from "./types";
 // Register User
 export const registerUser = (userData, history) => (dispatch) => {
+  console.log("inAction", userData);
   axios
     .post("/api/users/register", userData)
     .then((res) => history.push("/login")) // re-direct to login on successful register
