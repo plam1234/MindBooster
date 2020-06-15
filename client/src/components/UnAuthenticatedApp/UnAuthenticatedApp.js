@@ -8,6 +8,7 @@ import Nav from "../Nav";
 
 function UnauthenticatedApp() {
   return (
+     console.log("youre not in yet")
     <Router>
       <Nav />
       <Switch>
