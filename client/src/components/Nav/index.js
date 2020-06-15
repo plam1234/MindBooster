@@ -15,11 +15,20 @@ class Navbar extends Component {
 
   render() {
     const { user } = this.props.auth;
+    console.log(user);
+
+    const loginLogoutButton = user.id ? (
+      <Link to="/signout">
+        <Button onClick={this.onLogoutClick}>Log out</Button>
+      </Link>
+    ) : (
+      <Link to="/">
+        <Button onClick={this.onLogoutClick}>Sign In</Button>
+      </Link>
+    );
     return (
       <Nav className="bar" activeKey="">
-        <Link to="/login">
-          <Button onClick={this.onLogoutClick}>Sign out</Button>
-        </Link>
+        {loginLogoutButton}
       </Nav>
     );
   }
