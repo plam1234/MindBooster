@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ReactDOM from "react-dom";
 import questionAPI from "../question/index";
 import QuestionBox from "../components/QuestionBox";
 import Result from "../components/ResultBox";
@@ -73,5 +74,7 @@ class Quiz extends Component {
     );
   }
 }
+
+// ReactDOM.render(<Quiz />, document.getElementById("root"));
 
 export default Quiz;
