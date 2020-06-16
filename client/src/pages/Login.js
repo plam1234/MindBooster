@@ -24,7 +24,7 @@ class Login extends Component {
     }
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     if (nextProps.auth.isAuthenticated) {
       this.props.history.push("/homepage"); // push user to dashboard when they login
     }
@@ -58,7 +58,7 @@ class Login extends Component {
     return (
       <Form className="login">
         <h1>Log in to. </h1>
-        <img className="img" src={logo} />
+        <img className="img" src={logo} alt="" />
         <Form.Group controlId="email">
           <Form.Label>Email address</Form.Label>
           <Form.Control
