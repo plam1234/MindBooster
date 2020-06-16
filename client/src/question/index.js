@@ -48,8 +48,7 @@ const qBank = [
         ],
         correct: "   B. as syntax",
         questionId: "6",
-        explanation:
-            "Representation of algorithms *As programs *As flowcharts *As pseudo codes.",
+        
     },
     {
         question: "Another name for 1-D arrays.",
@@ -78,7 +77,7 @@ const qBank = [
         
     },
     {
-        question: "how build the app ?",
+        question: "This characteristic often draws the line between what is feasible and what is impossible.",
         answers: [
             "   A. Performance",
             "   B. System Evaluation",
