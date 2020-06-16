@@ -68,8 +68,8 @@ class Quiz extends Component {
           )}
         {this.state.responses === 5 ? (
           <Result
+            answer={this.state.correctAns}
             score={this.state.score}
-            answer={this.state.correctAns} // this is good
             playAgain={this.playAgain}
           />
         ) : null}
