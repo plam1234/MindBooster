@@ -8,38 +8,38 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
 class Navbar extends Component {
-  onLogoutClick = (e) => {
-    e.preventDefault();
-    this.props.logoutUser();
-  };
+    onLogoutClick = (e) => {
+        e.preventDefault();
+        this.props.logoutUser();
+    };
 
-  render() {
-    const { user } = this.props.auth;
-    console.log(user);
+    render() {
+        const { user } = this.props.auth;
+        console.log(user);
 
-    const loginLogoutButton = user.id ? (
-      <Link to="/signout">
-        <Button onClick={this.onLogoutClick}>Log out</Button>
-      </Link>
-    ) : (
-      <Link to="/">
-        <Button onClick={this.onLogoutClick}>Sign In</Button>
-      </Link>
-    );
-    return (
-      <Nav className="bar" activeKey="">
-        {loginLogoutButton}
-      </Nav>
-    );
-  }
+        const loginLogoutButton = user.id ? (
+            <Link to="/signout">
+                <Button onClick={this.onLogoutClick}>Log out</Button>
+            </Link>
+        ) : (
+            <Link to="/">
+                <Button onClick={this.onLogoutClick}>Sign In</Button>
+            </Link>
+        );
+        return (
+            <Nav className="bar" activeKey="">
+                {loginLogoutButton}
+            </Nav>
+        );
+    }
 }
 Navbar.propTypes = {
-  logoutUser: PropTypes.func.isRequired,
-  auth: PropTypes.object.isRequired,
+    logoutUser: PropTypes.func.isRequired,
+    auth: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = (state) => ({
-  auth: state.auth,
+    auth: state.auth,
 });
 
 export default connect(mapStateToProps, { logoutUser })(Navbar);
