@@ -52,7 +52,7 @@ class Quiz extends Component {
       <div className="container">
         <div className="title">
           <h1>Quiz of </h1>
-          <img src={logo} />
+          <img src={logo} alt="" />
         </div>
         {this.state.questionBank.length > 0 &&
           this.state.responses < 5 &&

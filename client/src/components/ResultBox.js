@@ -4,8 +4,7 @@ import "../style.css";
 const Result = ({ score, answer, playAgain }) => (
   <div className="score-board">
     <div className="score">
-      {" "}
-      Your score is {score} / 5 correct answer ! ! !{" "}
+      ] Your score is {score} / 5 correct answer ! ! !{" "}
     </div>
     <div className="ans">
       {" "}

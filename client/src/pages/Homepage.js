@@ -10,7 +10,7 @@ class Home extends Component {
     return (
       <div className="tainer">
         <h1>Hello</h1>
-        <img src={logo} />
+        <img src={logo} alt="" />
         <Card style={{ width: "90%", justifyContent: "center" }}>
           <Card.Img className="imagge" variant="top" src={quiz1} />
           <Card.Body>
