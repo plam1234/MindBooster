@@ -57,7 +57,7 @@ class Signup extends Component {
     return (
       <Form className="signup">
         <h1>Sign Up for</h1>
-        <img className="img" src={logo} />
+        <img className="img" src={logo} alt="" />
         <Form.Group controlId="name">
           <Form.Label>User Name </Form.Label>
           <Form.Control
